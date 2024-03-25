@@ -20,8 +20,9 @@ services:
       dockerfile: ../dev-config/Dockerfile.cms
     ports:
       - '1337:1337'
-    # volumes:
-    #   - ../cms:/usr/app
+    volumes:
+      # - ../cms:/usr/app
+      - ../cms/src:/usr/app/src
     environment:
       APP_KEYS: ${APP_KEYS}
       API_TOKEN_SALT: ${API_TOKEN_SALT}
