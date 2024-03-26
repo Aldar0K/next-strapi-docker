@@ -18,17 +18,18 @@ type Post = {
 };
 
 export default async function Home() {
-  const response = await fetch(`http://cms:1337/api/posts?populate=cover`, {
+  const response = await fetch(`${API_URL}/api/posts?populate=cover`, {
     headers: {
       Authorization: `Bearer ${API_TOKEN}`
+    },
+    next: {
+      tags: ['posts']
     }
   });
   const posts = (await response.json()) as {
     data: Post[];
     meta: any;
   };
-  console.log(`${API_URL}/api/posts?populate=cover`);
-  console.log(posts.data);
 
   return (
     <main className='flex min-h-screen flex-col items-center justify-between p-24'>
@@ -40,7 +41,7 @@ export default async function Home() {
             <p className='text-sm'>{post.attributes.description}</p>
             <Image
               src={post.attributes.cover.data.attributes.url}
-              alt={post.attributes.cover.data.attributes.alternativeText}
+              alt={post.attributes.cover.data.attributes.alternativeText || post.attributes.title}
               width={post.attributes.cover.data.attributes.width}
               height={post.attributes.cover.data.attributes.height}
               className='my-4 max-w-[300px] w-full h-auto'
