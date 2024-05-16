@@ -21,11 +21,16 @@
       "required": true
     },
     "cover": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "views": {
+      "type": "integer",
+      "default": 0,
       "required": true
     }
   }

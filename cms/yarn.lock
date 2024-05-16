@@ -1663,7 +1663,7 @@
     semver "7.5.4"
     umzug "3.2.1"
 
-"@strapi/design-system@1.16.0":
+"@strapi/design-system@1.16.0", "@strapi/design-system@^1.6.3":
   version "1.16.0"
   resolved "https://registry.yarnpkg.com/@strapi/design-system/-/design-system-1.16.0.tgz#29508372c6a90993d87991411c323193dcc9f22a"
   integrity sha512-HUt46z0LStQtNsmTh/3btzW+UQtYPtSS2hk+leQlcwCoczjf/K53OYeTjEIkUYfAc/R/W4CYVZfXJXYw3Fy6Sw==
@@ -1730,7 +1730,23 @@
     react-query "3.39.3"
     react-select "5.7.0"
 
-"@strapi/icons@1.16.0":
+"@strapi/helper-plugin@^4.6.0":
+  version "4.21.1"
+  resolved "https://registry.yarnpkg.com/@strapi/helper-plugin/-/helper-plugin-4.21.1.tgz#6b86f569ea2ff30ecea957d8d31dcaedfd6b4d58"
+  integrity sha512-7fvg8dWE+QYaGk8ELiytrRvIkqIfy5wX7d6TsIqlqNe+QTcicx4Xhv4dvVUrIW+438RXrcn8OfMAjQMBSJDQzw==
+  dependencies:
+    axios "1.6.0"
+    date-fns "2.30.0"
+    formik "2.4.0"
+    immer "9.0.19"
+    lodash "4.17.21"
+    qs "6.11.1"
+    react-helmet "6.1.0"
+    react-intl "6.4.1"
+    react-query "3.39.3"
+    react-select "5.7.0"
+
+"@strapi/icons@1.16.0", "@strapi/icons@^1.6.3":
   version "1.16.0"
   resolved "https://registry.yarnpkg.com/@strapi/icons/-/icons-1.16.0.tgz#0b98dfa805a370423ad945208c07d00962209bd3"
   integrity sha512-sa7MTlhHpbpFCS5ZIlgLQQtG4s5W7ojGFr6CsjwtFdezrvBLbY5ZGmVByghK7b3XoZ1bNYk1AiGdcxMQvCu+vw==
@@ -7814,7 +7830,7 @@ react-is@^18.0.0, react-is@^18.2.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
 
-react-query@3.39.3:
+react-query@3.39.3, react-query@^3.39.3:
   version "3.39.3"
   resolved "https://registry.yarnpkg.com/react-query/-/react-query-3.39.3.tgz#4cea7127c6c26bdea2de5fb63e51044330b03f35"
   integrity sha512-nLfLz7GiohKTJDuT4us4X3h/8unOh+00MLb2yJoGTPjxKs2bc1iDhkNx2bd5MKklXnOD3NrVZ+J2UXujA5In4g==
@@ -8784,6 +8800,17 @@ statuses@2.0.1, statuses@^2.0.1:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
   integrity sha512-OpZ3zP+jT1PI7I8nemJX4AKmAX070ZkYPVWV/AaKTJl+tXCTGyVdC1a4SL8RUQYEwk/f34ZX8UTykN68FwrqAA==
+
+strapi-plugin-revalidate-button@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-revalidate-button/-/strapi-plugin-revalidate-button-1.0.7.tgz#f40f302352d21230cd1c8e45201d3db61d9d060f"
+  integrity sha512-WrDEda24yPZjE//0nDiQZCtwxcPvA1hain2vUstHpQtqqbAW0OZ0GdBJR1Tu5OvxxB9o5IzP02nBX1fn+GQ3sg==
+  dependencies:
+    "@strapi/design-system" "^1.6.3"
+    "@strapi/helper-plugin" "^4.6.0"
+    "@strapi/icons" "^1.6.3"
+    prop-types "^15.7.2"
+    react-query "^3.39.3"
 
 stream-chain@2.2.5, stream-chain@^2.2.5:
   version "2.2.5"

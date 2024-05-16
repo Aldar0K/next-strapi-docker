@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const API_URL = process.env.API_URL;
 const API_TOKEN = process.env.API_TOKEN;
@@ -37,15 +38,17 @@ export default async function Home() {
       <ul>
         {posts.data.map(post => (
           <li key={post.id}>
-            <h3 className='text-xl'>{post.attributes.title}</h3>
-            <p className='text-sm'>{post.attributes.description}</p>
-            <Image
-              src={post.attributes.cover.data.attributes.url}
-              alt={post.attributes.cover.data.attributes.alternativeText || post.attributes.title}
-              width={post.attributes.cover.data.attributes.width}
-              height={post.attributes.cover.data.attributes.height}
-              className='my-4 max-w-[300px] w-full h-auto'
-            />
+            <Link href={`/posts/${post.id}`}>
+              <h3 className='text-xl'>{post.attributes.title}</h3>
+              <p className='text-sm'>{post.attributes.description}</p>
+              <Image
+                src={post.attributes.cover.data.attributes.url}
+                alt={post.attributes.cover.data.attributes.alternativeText || post.attributes.title}
+                width={post.attributes.cover.data.attributes.width}
+                height={post.attributes.cover.data.attributes.height}
+                className='my-4 max-w-[300px] w-full h-auto'
+              />
+            </Link>
           </li>
         ))}
       </ul>
