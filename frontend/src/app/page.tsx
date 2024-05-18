@@ -1,42 +1,20 @@
+import { fetchPosts } from '@/api/services/fetchPosts';
 import Image from 'next/image';
 import Link from 'next/link';
-
-const API_URL = process.env.API_URL;
-const API_TOKEN = process.env.API_TOKEN;
-
-type Post = {
-  id: number;
-  attributes: {
-    title: string;
-    description: string;
-    createdAt: string;
-    updatedAt: string;
-    publishedAt: string;
-    cover: {
-      data: any;
-    };
-  };
-};
+import { notFound } from 'next/navigation';
 
 export default async function Home() {
-  const response = await fetch(`${API_URL}/api/posts?populate=cover`, {
-    headers: {
-      Authorization: `Bearer ${API_TOKEN}`
-    },
-    next: {
-      tags: ['posts']
-    }
-  });
-  const posts = (await response.json()) as {
-    data: Post[];
-    meta: any;
-  };
+  const posts = await fetchPosts();
+
+  if (!posts) {
+    return notFound();
+  }
 
   return (
     <main className='flex min-h-screen flex-col items-center justify-between p-24'>
       <h1>hello</h1>
       <ul>
-        {posts.data.map(post => (
+        {posts.map(post => (
           <li key={post.id}>
             <Link href={`/posts/${post.id}`}>
               <h3 className='text-xl'>{post.attributes.title}</h3>
