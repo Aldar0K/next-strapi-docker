@@ -1,7 +1,17 @@
 'use client';
 
-import { addView } from '@/api/services/addView';
 import { FC, useEffect } from 'react';
+
+const addView = async (id: number): Promise<'ok' | 'error'> => {
+  try {
+    fetch(`/api/addView/${id}`, {
+      method: 'PATCH'
+    });
+    return 'ok';
+  } catch (error) {
+    return 'error';
+  }
+};
 
 type Props = {
   postId: number;
