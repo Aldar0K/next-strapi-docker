@@ -6,7 +6,6 @@ type ResponseData = {
 
 export async function PATCH(request: Request, { params }: { params: { slug: string } }) {
   const postId = params.slug;
-  console.log('post id:', postId);
 
   try {
     await fetch(`${process.env.API_URL}/api/posts/${postId}/add-view`, {

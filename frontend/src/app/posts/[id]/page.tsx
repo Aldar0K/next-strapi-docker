@@ -1,5 +1,6 @@
 import { fetchPost } from '@/api/services/fetchPost';
 import { fetchPosts } from '@/api/services/fetchPosts';
+import { Form } from '@/components/form';
 import { Viewer } from '@/components/viewer-server-api';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -29,9 +30,8 @@ export default async function Post({ params }: { params: { id: string } }) {
       />
 
       {/* TODO add form for adding comments (maybe just a list of messages for each email/name) */}
-      {/* <Form /> */}
+      <Form />
 
-      {/* <Viewer postId={post.id} /> */}
       <Viewer postId={post.id} />
     </main>
   );
